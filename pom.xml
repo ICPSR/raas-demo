@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.umich.icpsr</groupId>
+	<artifactId>raas-demo</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ICPSR RaaS Demo</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>org.ebaysf.web</groupId>
+			<artifactId>cors-filter</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>raas</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.6.v20141205</version>
+				<configuration>
+					<systemProperties>
+						<force>true</force>
+						<systemProperty>
+							<name>useFileMappedBuffer</name>
+							<value>false</value>
+						</systemProperty>
+					</systemProperties>
+					<webApp>
+						<contextPath>/raas</contextPath>
+						<webInfIncludeJarPattern>.*/spring-[^/]*\.jar$|.*/icpsr-[^/]*\.jar$</webInfIncludeJarPattern>
+					</webApp>
+					<webXml>target/raas-demo/WEB-INF/web.xml</webXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

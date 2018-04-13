@@ -1,0 +1,40 @@
+/* IR STYLES */
+
+/* color of all clickable links in the IR navbar */
+header div#ir-bar ul.nav li a,  
+header div#ir-bar ul.nav li a:hover,  
+header div#ir-bar a {
+	color: white;
+	}
+
+img.irNavLogo {
+	float: left;
+	padding: 5px 15px 0px 0px;
+	height: 50px;
+	}
+
+div#ir-bar ul {
+	padding-top: 10px;	
+	}
+
+div.navbar-inner-ir {
+	margin-bottom: -1px;
+	background-image:none; /* default bootstrap has a grey gradiant on the navbar */
+	}
+
+div.irNavTitle {
+  	display: inline-block;
+	font-size: 250%;
+	width: 400px;	
+	}
+
+div.navbar-inner-ir li.active a {
+	background-color: #efefef;
+	}
+
+div#ir-bar {
+	background-color: #333366; 
+	border-bottom: 1px solid #333366; 
+	border-top: 1px solid #333366;
+}
+
