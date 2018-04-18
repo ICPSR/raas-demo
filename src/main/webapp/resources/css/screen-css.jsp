@@ -6,7 +6,7 @@
 
 body {
 /*	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;	
 	}
 	
 a {
@@ -456,3 +456,30 @@ footer {margin-bottom: 10px;}
 .csl-entry {
 	display: inline;
 }
+
+
+
+h1, .h1, h2, .h2, h3, .h3 {
+	color: #fff;
+}
+
+
+* {
+	text-shadow: none;
+}
+
+.panel {
+	color: #000;
+}
+
+.panel a,
+.panel a:hover,
+.panel a:focus,
+#projectTree a {
+	color: #000 !important;
+}
+
+.container-fluid {
+	width: 100%;
+}
+
