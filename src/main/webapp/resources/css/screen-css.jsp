@@ -200,25 +200,25 @@ article .panel-heading .panel-title a {
 
 h1 {
 
-  font-size: 2em;
+  font-size: 3em;
   color: #063663;
   }	
 
 h2 {
 
-  font-size: 1.7em;
+  font-size: 2.5em;
    color: #063663;
   }	
 	
 h3 {
 
-  font-size: 1.5em;
+  font-size: 2em;
    color: #063663;
   }	
 
 h4 {
 
-  font-size: 1.2em;
+  font-size: 1.75em;
    color: #063663;
   }	
 
@@ -345,12 +345,8 @@ div.previous-next label {
 	
 div#bannerText {
 	display: none;
-<<<<<<< HEAD
-
-=======
 	background-color: #8dc63f; 
 	padding: 5px;
->>>>>>> a1d6a40... ARCHDEV-421: Finished off getting the expiry date for the banner display.  Moved styling into the css
 	}	
 
 /* blacklight facet styles */
@@ -457,29 +453,88 @@ footer {margin-bottom: 10px;}
 	display: inline;
 }
 
+/* Style overrides for demo purposes */
 
+main {
+	background: #fff;
+	border-radius: 5px;
+}
 
 h1, .h1, h2, .h2, h3, .h3 {
 	color: #fff;
+	font-weight: 500;
+    line-height: 1.2;
 }
 
+body {
+	font-size: 14px;
+}
 
 * {
 	text-shadow: none;
 }
 
-.panel {
+.panel,
+.popover,
+.popover-title {
 	color: #000;
 }
 
 .panel a,
 .panel a:hover,
 .panel a:focus,
-#projectTree a {
+#projectTree a,
+.breadcrumb,
+.breadcrumb a,
+.breadcrumb li,
+#projectTree .icon {
 	color: #000 !important;
+}
+
+.nav-link:focus, .nav-link:hover {
+    text-decoration: none;
+}
+
+#projectTree .node-selected a,
+#projectTree .node-selected .icon,
+.mastfoot  {
+	color: #fff !important;
 }
 
 .container-fluid {
 	width: 100%;
 }
 
+.masthead {
+	min-height: 40px;
+}
+
+.btn-primary {
+	border: none;
+}
+
+nav.nav-masthead {
+	font-size: 1.2em;
+	padding: 20px 10px;
+}
+
+.stats-col {
+	color: #000;
+}
+
+
+#workspace {
+	padding-top: 15px;
+	border-radius: 5px;
+}
+
+#workspace,
+#workspace a, 
+#workspace a:focus,
+#workspace a:hover {
+    color: #000;
+}
+
+#workspace a.btn-primary {
+	color: #fff;
+}
