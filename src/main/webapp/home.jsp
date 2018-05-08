@@ -28,7 +28,7 @@
 		</header>
 
 		<main role="main" class="inner cover">
-		<h1 class="cover-heading">Welcome to IAASIST & CARTO 2018.</h1>
+		<h1 class="cover-heading">Welcome to IASSIST & CARTO 2018.</h1>
 		<p class="lead">Thank you for choosing to attend this workshop and
 			learning more about Repository as a Service hosted by ICPSR. We are
 			excited to demo the repository features and it's use of integration
