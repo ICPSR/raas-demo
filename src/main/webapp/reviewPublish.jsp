@@ -140,73 +140,44 @@
 		</header>
 
 		<main role="main" class="inner cover">
-		<div id="workspace"></div>
-		<script type="text/javascript">
-			var jwtToken = 'eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IlVtbWVycGlsbGFpIiwiZGlzcGxheU5hbWUiOm51bGwsImlzcyI6IklTU1VFUl9JQ1BTUiIsImZpcnN0TmFtZSI6IkhhcnNoYWt1bWFyIiwic29jaWFsSWQiOm51bGwsImR1b0F1dGgiOmZhbHNlLCJzeXNBdXRoSWQiOjY1MTM4MiwiaWQiOjE0NDAsInN5c1Byb2ZpbGVVcmwiOm51bGwsImV4cCI6MTUyNzE3MDAxNywiaWF0IjoxNTI3MDgzNjE3LCJlbWFpbCI6ImhhcnNoYXVAdW1pY2guZWR1Iiwic29jaWFsSWRUeXBlIjpudWxsfQ.b_O5BDiTGN-t563kKljI3Abug3rKyUNhc7wToUBBiCtbE97Pcw7tR-0X4gIhP4Es9A_dc1vXocGva_f9yJM_rA';
-			$(document).ajaxSend(function(event, jqxhr, settings) {
-				jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
-			});
-			var goToPathVal = '<%= request.getParameter("goToPath") %>';
-			var goToLevelVal = '<%= request.getParameter("goToLevel") %>';
-			var userEmail = 'email@umich.edu';
-			var userDisplayName = 'John Doe';
-			var depositConfig = {
-				bibliographyServerUrl : 'https://bibliography.dev.icpsr.umich.edu/bibliography',
-				depositServerUrl : "https://deposit.dev.icpsr.umich.edu/deposit",
-				tenant : "datalumos",
-				homePath : "/datalumos",
-				goToPath : goToPathVal,
-				goToLevel : goToLevelVal,
-				workspaceUrl : "workspace.jsp",
-				reviewPublishUrl : "reviewPublish.jsp",
-				includeProcessed : true,
-				userDisplayName : userDisplayName,
-				userEmail : userEmail,
-				embed : true,
-				actions : function(path, level) {
-					if (level != null && level == 'project') {
-						var actionVals = [];
-						$
-								.ajax({
-									url : 'https://deposit.dev.icpsr.umich.edu/deposit/getSipProjectStatus?path='
-											+ path,
-									dataType : "json",
-									type : 'GET',
-									async : false,
-									success : function(data) {
-										var actionLabel = 'Publish Project';
-										var actionDisabled = false;
-										if (data != null) {
-											if (data.workspaceStatus == 'edited') {
-												actionLabel = 'Re-Publish Project';
-											} else if (data.workspaceStatus == 'published') {
-												actionLabel = 'Edit Project to Re-Publish';
-												actionDisabled = true;
-											}
-											actionVals = [ {
-												actionPostUrl : './reviewPublish.jsp?resourcePath='
-														+ path
-														+ '&type='
-														+ level
-														+ '&tenant=datalumos',
-												actionLabel : actionLabel,
-												actionDisabled : actionDisabled
-											} ];
-										}
-									}.bind(this),
-									error : function(xhr, status, err) {
-										console.error(xhr, status, err);
-									}
-								});
-						return actionVals;
-					} else {
-						return [];
-					}
-				}
-			};
-			ReactDOM.render(React.createElement(Workspace, null), document
-					.getElementById('workspace'));
-		</script> </main>
+		<article>
+		<div class="container-fluid">
+			<h3>Publish data</h3>
+			<div class="alert alert-info" role="alert">Please review the
+				data carefully. Once the Data Collection is published, you will not
+				be able to delete it from the repository. If any of this information
+				is incomplete or incorrect, please return to the previous screen to
+				make the necessary changes.</div>
+			<div id="publish"></div>
+			<div id="map"></div>
+		</div>
+	</article>
+	<script type="text/javascript">
+		var resPath = '<%= request.getParameter("resourcePath") %>';
+		var resType = 'project';
+		var jwtToken = 'eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IlVtbWVycGlsbGFpIiwiZGlzcGxheU5hbWUiOm51bGwsImlzcyI6IklTU1VFUl9JQ1BTUiIsImZpcnN0TmFtZSI6IkhhcnNoYWt1bWFyIiwic29jaWFsSWQiOm51bGwsImR1b0F1dGgiOmZhbHNlLCJzeXNBdXRoSWQiOjY1MTM4MiwiaWQiOjE0NDAsInN5c1Byb2ZpbGVVcmwiOm51bGwsImV4cCI6MTUyNzE3MDAxNywiaWF0IjoxNTI3MDgzNjE3LCJlbWFpbCI6ImhhcnNoYXVAdW1pY2guZWR1Iiwic29jaWFsSWRUeXBlIjpudWxsfQ.b_O5BDiTGN-t563kKljI3Abug3rKyUNhc7wToUBBiCtbE97Pcw7tR-0X4gIhP4Es9A_dc1vXocGva_f9yJM_rA';
+		$(document).ajaxSend(function(event, jqxhr, settings) {
+			jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
+		});
+
+		var depositConfig = {
+			depositServerUrl : "https://deposit.dev.icpsr.umich.edu/deposit",
+			bibliographyServerUrl: 'https://bibliography.dev.icpsr.umich.edu/bibliography',
+			workspaceUrl : "workspace.jsp",
+			reviewTermsUrl : "reviewTerms",
+			tenant : "datalumos",
+			homePath : "/datalumos"
+		};
+		var publishResource = {
+			resourcePath : resPath,
+			type : resType
+		};
+		ReactDOM.render(React.createElement(Reviewer, {
+			publishResource : publishResource,
+			isPublish : true
+		}), document.getElementById('publish'));
+	</script>
+		 </main>
 
 		<footer class="mastfoot mt-auto">
 			<div class="inner">

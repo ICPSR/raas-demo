@@ -43,7 +43,7 @@
 						<a class="d-block w-100" alt="Second slide"><p>
 								<strong>Search</strong><br>Search contents of your
 								repository powered by Apache Solr. <br> <br> <a
-									role="button" class="btn btn-primary">Search</a>
+									role="button" class="btn btn-primary" href="search.jsp">Search</a>
 							</p></a>
 					</div>
 					<div class="carousel-item">

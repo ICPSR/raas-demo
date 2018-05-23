@@ -7,6 +7,6 @@ This is a simple web application that has only few static html contents and samp
 * Install Apache Maven from https://maven.apache.org/download.cgi
 * Use git clone command or download the project as a zip archive file
 * Extract the content into a local drive
-* Run command "mvn clean jetty:run"
+* Run command "mvn clean package jetty:run"
 * Application is available here http://localhost:8080/raas
 
