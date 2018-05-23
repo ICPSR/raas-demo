@@ -5,7 +5,7 @@
 * You will have to use this value in below provided code snippets, look for word **USER_TOKEN**
 
 ## Setup Workspace
-* Edit workspace.jsp and paste the below code snippet within tags `<main role="main" class="inner cover">FIXME</main>`
+* Edit /src/main/webapp/workspace.jsp and paste the below code snippet within tags `<main role="main" class="inner cover">FIXME</main>`
 
 ```javascript
 <div id="workspace"></div>
@@ -72,7 +72,7 @@
 ```
 
 ## Setup review page
-* Edit reviewPublish.jsp and paste the below code snippet within tags `<main role="main" class="inner cover">FIXME</main>`
+* Edit /src/main/webapp/reviewPublish.jsp and paste the below code snippet within tags `<main role="main" class="inner cover">FIXME</main>`
 ```javascript
 <article>
 		<div class="container-fluid">
@@ -110,4 +110,4 @@
 ```
 
 ## Setup search
-* Search is already wired up to demo a sample search config, currently this requires some additional configuration and is restricted with config that is used in this demo. Please review the search.jsp page to understand supported configuration elements.
+* Search is already wired up to demo a sample search config, currently this requires some additional configuration and is restricted with config that is used in this demo. Please review the /src/main/webapp/search.jsp page to understand supported configuration elements.
