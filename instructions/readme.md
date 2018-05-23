@@ -2,6 +2,7 @@
 ## Get login credential
 * Establish a credential token, by logging into [DataLumos](https://dev.datalumos.org/datalumos/workspace)
 * Right click and copy the JS variable `var jwtToken = '..............';`
+* You will have to use this value in below provided code snippets, look for word **USER_TOKEN**
 
 ## Setup Workspace
 * Edit workspace.jsp and paste the below code snippet within tags `<main role="main" class="inner cover">FIXME</main>`
@@ -9,7 +10,7 @@
 ```javascript
 <div id="workspace"></div>
 <script type="text/javascript">
-	var jwtToken = 'FIXME';
+	var jwtToken = 'USER_TOKEN';
 	$(document).ajaxSend(function(event, jqxhr, settings) {
 		jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
 	});
@@ -88,7 +89,7 @@
 	<script type="text/javascript">
 		var resPath = '<%= request.getParameter("resourcePath") %>';
 		var resType = 'project';
-		var jwtToken = 'FIXME';
+		var jwtToken = 'USER_TOKEN';
 		$(document).ajaxSend(function(event, jqxhr, settings) {
 			jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
 		});
