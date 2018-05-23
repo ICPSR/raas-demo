@@ -14,8 +14,7 @@
 		jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
 	});
 	var goToPathVal = '<%=request.getParameter("goToPath")%>';
-	var goToLevelVal = '<%=request.getParameter("goToLevel")%>
-	';
+	var goToLevelVal = '<%=request.getParameter("goToLevel")%>';
 	var userEmail = 'email@umich.edu';
 	var userDisplayName = 'John Doe';
 	var depositConfig = {
@@ -36,8 +35,7 @@
 				var actionVals = [];
 				$
 						.ajax({
-							url : 'https://deposit.dev.icpsr.umich.edu/deposit/getSipProjectStatus?path='
-									+ path,
+							url : 'https://deposit.dev.icpsr.umich.edu/deposit/getSipProjectStatus?path='+ path,
 							dataType : "json",
 							type : 'GET',
 							async : false,
