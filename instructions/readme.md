@@ -14,8 +14,8 @@
 	$(document).ajaxSend(function(event, jqxhr, settings) {
 		jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
 	});
-	var goToPathVal = '<%=request.getParameter("goToPath")%>';
-	var goToLevelVal = '<%=request.getParameter("goToLevel")%>';
+	var goToPathVal = '<%=request.getParameter("goToPath") == null ? "": request.getParameter("goToPath")%>';
+	var goToLevelVal = '<%=request.getParameter("goToLevel") == null ? "" : request.getParameter("goToLevel") %>';
 	var userEmail = 'email@umich.edu';
 	var userDisplayName = 'John Doe';
 	var depositConfig = {
@@ -87,7 +87,7 @@
 		</div>
 	</article>
 	<script type="text/javascript">
-		var resPath = '<%= request.getParameter("resourcePath") %>';
+		var resPath = '<%= request.getParameter("resourcePath") == null ? "" : request.getParameter("resourcePath") %>';
 		var resType = 'project';
 		var jwtToken = 'USER_TOKEN';
 		$(document).ajaxSend(function(event, jqxhr, settings) {

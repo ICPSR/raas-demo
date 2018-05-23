@@ -139,7 +139,11 @@
 			</div>
 		</header>
 
-		<main role="main" class="inner cover">FIXME</main>
+		<main role="main" class="inner cover">
+		
+		FIXME
+		
+		</main>
 
 		<footer class="mastfoot mt-auto">
 			<div class="inner">

@@ -30,11 +30,11 @@
 		<main role="main" class="inner cover">
 		<h1 class="cover-heading">Welcome to IASSIST & CARTO 2018.</h1>
 		<p class="lead">Thank you for choosing to attend this workshop and
-			learning more about Repository as a Service hosted by ICPSR. We are
+			learning more about Repository as a Service hosted by ICPSR. <br/> We are
 			excited to demo the repository features and it's use of integration
-			with your university web sites.</p>
+			with your institutional web sites.</p>
 		<p class="lead">
-			<a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+			<a href="features.jsp" class="btn btn-lg btn-secondary">Learn more</a>
 		</p>
 		</main>
 
