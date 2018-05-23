@@ -146,8 +146,9 @@
 			$(document).ajaxSend(function(event, jqxhr, settings) {
 				jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
 			});
-			var goToPathVal = '<%= request.getParameter("goToPath") %>';
-			var goToLevelVal = '<%= request.getParameter("goToLevel") %>';
+			var goToPathVal = '<%=request.getParameter("goToPath")%>';
+			var goToLevelVal = '<%=request.getParameter("goToLevel")%>
+			';
 			var userEmail = 'email@umich.edu';
 			var userDisplayName = 'John Doe';
 			var depositConfig = {
