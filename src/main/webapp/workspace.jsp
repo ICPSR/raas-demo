@@ -140,67 +140,7 @@
 		</header>
 		<main role="main" class="inner cover">
 		
-			<div id="workspace"></div>
-<script type="text/javascript">
-	var jwtToken = 'eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6Iklhbm5hY2NvbmUiLCJkaXNwbGF5TmFtZSI6bnVsbCwiaXNzIjoiSVNTVUVSX0lDUFNSIiwiZmlyc3ROYW1lIjoiTWljaGFlbCIsInNvY2lhbElkIjpudWxsLCJkdW9BdXRoIjpmYWxzZSwic3lzQXV0aElkIjozODkwMjgsImlkIjoxODgwLCJzeXNQcm9maWxlVXJsIjpudWxsLCJleHAiOjE1MjcyNjMwMjYsImlhdCI6MTUyNzE3NjYyNiwiZW1haWwiOiJtY2lhbm5hQHVtaWNoLmVkdSIsInNvY2lhbElkVHlwZSI6bnVsbH0.kWdOGDVF_eKWPgddsvbOod1RwUJyM30MGROlqiUVGKAi9ty5c0hdDZ2KzmXyOWoCpwEs4izNZXLox7uKsNbwyA';
-	$(document).ajaxSend(function(event, jqxhr, settings) {
-		jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
-	});
-	var goToPathVal = '<%=request.getParameter("goToPath") == null ? "": request.getParameter("goToPath")%>';
-	var goToLevelVal = '<%=request.getParameter("goToLevel") == null ? "" : request.getParameter("goToLevel") %>';
-	var userEmail = 'email@umich.edu';
-	var userDisplayName = 'John Doe';
-	var depositConfig = {
-		bibliographyServerUrl : 'https://bibliography.dev.icpsr.umich.edu/bibliography',
-		depositServerUrl : "https://deposit.dev.icpsr.umich.edu/deposit",
-		tenant : "datalumos",
-		homePath : "/datalumos",
-		goToPath : goToPathVal,
-		goToLevel : goToLevelVal,
-		workspaceUrl : "workspace.jsp",
-		reviewPublishUrl : "reviewPublish.jsp",
-		includeProcessed : true,
-		userDisplayName : userDisplayName,
-		userEmail : userEmail,
-		embed : true,
-		actions : function(path, level) {
-			if (level != null && level == 'project') {
-				var actionVals = [];
-				$
-						.ajax({
-							url : 'https://deposit.dev.icpsr.umich.edu/deposit/getSipProjectStatus?path='+ path,
-							dataType : "json",
-							type : 'GET',
-							async : false,
-							success : function(data) {
-								var actionLabel = 'Publish Project';
-								var actionDisabled = false;
-								if (data != null) {
-									if (data.workspaceStatus == 'edited') {
-										actionLabel = 'Re-Publish Project';
-									} else if (data.workspaceStatus == 'published') {
-										actionLabel = 'Edit Project to Re-Publish';
-										actionDisabled = true;
-									}
-									actionVals = [ {
-										actionPostUrl : './reviewPublish.jsp?resourcePath='+ path+ '&type='+ level+ '&tenant=datalumos',
-										actionLabel : actionLabel,
-										actionDisabled : actionDisabled
-									} ];
-								}
-							}.bind(this),
-							error : function(xhr, status, err) {
-								console.error(xhr, status, err);
-							}
-						});
-				return actionVals;
-			} else {
-				return [];
-			}
-		}
-	};
-	ReactDOM.render(React.createElement(Workspace, null), document.getElementById('workspace'));
-</script>
+		FIXME
 			
 		</main>
 		<footer class="mastfoot mt-auto">
