@@ -466,6 +466,24 @@ h1, .h1, h2, .h2, h3, .h3 {
     line-height: 1.2;
 }
 
+main h1, 
+main .h1,
+main h2,
+main .h2,
+main h3,
+main .h3,
+main {
+	color: #000;
+}
+
+main a,
+main a:hover,
+main a:focus,
+main a:visited,
+main a:active {
+	color: #004a8f;
+}
+
 body {
 	font-size: 14px;
 }

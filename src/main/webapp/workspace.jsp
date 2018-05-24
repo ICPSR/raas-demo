@@ -23,7 +23,7 @@
 	href="/raas/resources/scripts/jquery-ui-1.12.0/jquery-ui.theme.min.css"
 	type="text/css" rel="stylesheet" />
 <script src="/raas/resources/scripts/jquery-ui-1.12.0/jquery-ui.min.js"></script>
-<script src="/raas/resources/js/bootstrap.min.js"></script>
+
 <link
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i"
 	rel="stylesheet">
@@ -142,7 +142,7 @@
 		
 			<div id="workspace"></div>
 <script type="text/javascript">
-	var jwtToken = 'USER_TOKEN';
+	var jwtToken = 'eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6Iklhbm5hY2NvbmUiLCJkaXNwbGF5TmFtZSI6bnVsbCwiaXNzIjoiSVNTVUVSX0lDUFNSIiwiZmlyc3ROYW1lIjoiTWljaGFlbCIsInNvY2lhbElkIjpudWxsLCJkdW9BdXRoIjpmYWxzZSwic3lzQXV0aElkIjozODkwMjgsImlkIjoxODgwLCJzeXNQcm9maWxlVXJsIjpudWxsLCJleHAiOjE1MjcyNjMwMjYsImlhdCI6MTUyNzE3NjYyNiwiZW1haWwiOiJtY2lhbm5hQHVtaWNoLmVkdSIsInNvY2lhbElkVHlwZSI6bnVsbH0.kWdOGDVF_eKWPgddsvbOod1RwUJyM30MGROlqiUVGKAi9ty5c0hdDZ2KzmXyOWoCpwEs4izNZXLox7uKsNbwyA';
 	$(document).ajaxSend(function(event, jqxhr, settings) {
 		jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
 	});
