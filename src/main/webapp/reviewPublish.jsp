@@ -141,7 +141,39 @@
 
 		<main role="main" class="inner cover">
 		
-		FIXME
+		<article>
+		<div class="container-fluid">
+			<h3>Publish data</h3>
+			<div class="alert alert-info" role="alert">Please review the
+				data carefully. Once the Data Collection is published, you will not
+				be able to delete it from the repository. If any of this information
+				is incomplete or incorrect, please return to the previous screen to
+				make the necessary changes.</div>
+			<div id="publish"></div>
+			<div id="map"></div>
+		</div>
+	</article>
+	<script type="text/javascript">
+		var resPath = '<%= request.getParameter("resourcePath") == null ? "" : request.getParameter("resourcePath") %>';
+		var resType = 'project';
+		var jwtToken = 'USER_TOKEN';
+		$(document).ajaxSend(function(event, jqxhr, settings) {
+			jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
+		});
+		var depositConfig = {
+			depositServerUrl : "https://deposit.dev.icpsr.umich.edu/deposit",
+			bibliographyServerUrl: 'https://bibliography.dev.icpsr.umich.edu/bibliography',
+			workspaceUrl : "workspace.jsp",
+			reviewTermsUrl : "reviewTerms",
+			tenant : "datalumos",
+			homePath : "/datalumos"
+		};
+		var publishResource = {
+			resourcePath : resPath,
+			type : resType
+		};
+		ReactDOM.render(React.createElement(Reviewer, {publishResource : publishResource,isPublish : true}), document.getElementById('publish'));
+	</script>
 		
 		</main>
 

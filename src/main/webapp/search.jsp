@@ -101,7 +101,7 @@
 		<script type="text/javascript">
 			var staff = true;
 
-			var jwtToken = 'eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IlVtbWVycGlsbGFpIiwiZGlzcGxheU5hbWUiOm51bGwsImlzcyI6IklTU1VFUl9JQ1BTUiIsImZpcnN0TmFtZSI6IkhhcnNoYWt1bWFyIiwic29jaWFsSWQiOm51bGwsImR1b0F1dGgiOmZhbHNlLCJzeXNBdXRoSWQiOjY1MTM4MiwiaWQiOjE0NDAsInN5c1Byb2ZpbGVVcmwiOm51bGwsImV4cCI6MTUyNzE3MDAxNywiaWF0IjoxNTI3MDgzNjE3LCJlbWFpbCI6ImhhcnNoYXVAdW1pY2guZWR1Iiwic29jaWFsSWRUeXBlIjpudWxsfQ.b_O5BDiTGN-t563kKljI3Abug3rKyUNhc7wToUBBiCtbE97Pcw7tR-0X4gIhP4Es9A_dc1vXocGva_f9yJM_rA';
+			var jwtToken = 'USER_TOKEN';
 			$(document).ajaxSend(function(event, jqxhr, settings) {
 				jqxhr.setRequestHeader("Authorization", "Bearer " + jwtToken);
 			});
